@@ -4,6 +4,7 @@ import Main from './pages/Main';
 // import Books from './pages/Books';
 //import Roulette from './pages/Roulette';
 import Login from './pages/Login';
+import Signup from './pages/Signup';
 import Footer from './pages/Footer';
 import { BrowserRouter,Route, Routes } from 'react-router-dom';
 import './App.css';
@@ -20,6 +21,8 @@ export default function App() {
   {/* <Route path ="/roulette" element={<Roulette/>}></Route> */}
   {/* <Route path="/books" element={<Books/>}></Route> */}
   <Route path="/login" element={<Login/>}></Route>
+  <Route path="/signup" element={<Signup/>}></Route>
+
   </Routes>
   <Footer/>
   </BrowserRouter>

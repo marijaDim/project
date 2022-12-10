@@ -46,7 +46,7 @@ export default class Login extends Component {
       <div id="login" className="p-2 border border-dark">
       <form onSubmit={this.handleSubmit}>
         
-        <h3 className="text-center">Sign In</h3>
+        <h3 className="text-center mt-4">Sign In</h3>
 
         <div className="mb-3">
           <label>Email address</label>
@@ -82,7 +82,7 @@ export default class Login extends Component {
         </div>
 
         <div className="d-grid">
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-warning">
             Log in
           </button>
         </div>
@@ -93,9 +93,9 @@ export default class Login extends Component {
       </form>
       </div>
       <div id="signup" className="p-2 border border-dark">
-        <h3 className="text-center">Still sober?</h3>
+        <h3 className="text-center mt-4">Still sober?</h3>
         <p>Sign up and discover the great amount od cocktails and drinks you can make at home!</p>
-        <Link to="/signup" className="btn btn-primary align-item-center">Sign up</Link>
+        <Link to="/signup" className="btn btn-warning align-item-center">Sign up</Link>
         {/* <button>Sign up <a href="/signup"></a></button> */}
       </div>
       </div>
