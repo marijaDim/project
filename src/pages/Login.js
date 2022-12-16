@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import Reset from "./Reset";
-import Signup from "./Signup";
+//import Signup from "./Signup";
 import {Link} from "react-router-dom"
 
 export default class Login extends Component {

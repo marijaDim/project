@@ -16,7 +16,6 @@
 
 
 .nav_wrap{
-
   height: 180px;
   /* border-bottom: 2px solid #f1f1f1; */
   padding: 0 20px;
@@ -27,6 +26,7 @@
   padding-left: 20px;
  
 }
+
 
 
 /* ***MAIN*** */
@@ -153,6 +153,48 @@ padding: 20px;
 
 
 
+
+/***SEARCH*** */
+/* #search_pic{
+  background-image: url(img/mainpic/Optimized-mezcal.jpg);
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+}*/
+.search_wrap{
+  height: 100vh;
+} 
+
+#search{
+  width: 80%;
+        padding: 12px 24px;
+        background-color: transparent;
+        transition: transform 250ms ease-in-out;
+        font-size: 14px;
+        line-height: 18px;
+margin-left: 30px;    
+    color: #daa520;
+    margin-top: 50px;
+        background-color: transparent;
+         transition: all 250ms ease-in-out;}
+
+
+         
+#search::placeholder{
+  /* color: color(#575756 a(0.8)); */
+  color: #daa520;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+#search:hover, #search:focus{
+  padding: 12px 0;
+            outline: 0;
+            border: 1px solid transparent;
+            border-bottom: 1px solid #575756;
+            border-radius: 0;
+            /* background-position: 100% center; */
+}
 /* ***FOOTER*** */
 
 .footer{
@@ -172,3 +214,9 @@ margin-top: 10px;
   display: none;
 }
 } 
+
+@media (max-width: 780px) {
+  .footer{
+    display: none;
+  }
+  } 
