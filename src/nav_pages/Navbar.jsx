@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <Nav className='nav_wrap'>
         <div className="d-flex align-items-center">
-        <NavLink to="/"><img src={logo} width="100" height="150" /></NavLink>
+        <NavLink to="/"><img src={logo} alt="logo" width="100" height="150" /></NavLink>
         <h3>MAKE ME A COCKTAIL</h3>
         <NavLink to ={"/checkout"}>
           <div className="cart">

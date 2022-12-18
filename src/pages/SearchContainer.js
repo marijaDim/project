@@ -1,8 +1,8 @@
 import React from 'react';
 import { HiSearch} from "react-icons/hi";
-import CocktailCard from './CocktailCard'
+import CocktailCard from './CocktailsList'
 import AppContext from "../context";
-import { useRef,useEffect ,useContext, useState} from 'react';
+import { useRef,useEffect ,useContext} from 'react';
 
 
 
@@ -10,7 +10,7 @@ import { useRef,useEffect ,useContext, useState} from 'react';
 export default function SearchContainer(){
 
         const searchValue = useRef('');
-        const { setSearchTerm, cocktails, searchTerm, found } = useContext(AppContext);
+        const { setSearchTerm, cocktails, found } = useContext(AppContext);
         
         const searchCocktail = (e) => {
 

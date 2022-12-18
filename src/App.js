@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './nav_pages/Navbar';
 import Main from './pages/Main';
 import Books from './pages/Books';
+import DrinkCard from './pages/DrinkCard';
 import RecipeContainer from './pages/RecipeContainer';
 //import Roulette from './pages/Roulette';
 import Login from './pages/Login';
@@ -21,6 +22,7 @@ export default function App() {
   <Navbar />
   <Routes>
   <Route exact path ="/" element={<Main/>}></Route>
+  <Route path="/cocktail/id" element={<DrinkCard/>}> </Route>
   {/* <Route path ="/roulette" element={<Roulette/>}></Route> */}
   <Route path="/books" element={<Books/>}></Route>
   <Route path="/whiskey" element={ <RecipeContainer/>}></Route>

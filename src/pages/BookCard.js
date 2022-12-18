@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { AiFillShopping } from 'react-icons/ai';
 import { useContext } from 'react';
 import CartContext from '../CartContext';
@@ -10,7 +10,7 @@ function BookCard({name, img, price, description}){
     return(
         <div className='book_card'>
             <div className='book_box'>
-            <img src={img} width="100" height="150" />
+            <img src={img} alt="book" width="100" height="150" />
             </div>
             <div className='purchase'>
                 <h3>{name}</h3>

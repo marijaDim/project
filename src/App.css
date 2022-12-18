@@ -220,3 +220,12 @@ margin-top: 10px;
     display: none;
   }
   } 
+
+
+
+  /* ***RECIPE CONTAINER*** */
+
+
+  .recipe_container{
+    padding-bottom: 80px;
+  }
