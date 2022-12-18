@@ -1,5 +1,5 @@
-import React from 'react';
-import Navbar from './nav_pages/Navbar';
+import React, {useState} from 'react';
+import Navbar from './pages/nav_pages/Navbar';
 import Main from './pages/Main';
 import Books from './pages/Books';
 import DrinkCard from './pages/DrinkCard';
@@ -16,13 +16,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-export default function App() {
+
+function App() {
+
   return (
   <BrowserRouter>
   <Navbar />
   <Routes>
   <Route exact path ="/" element={<Main/>}></Route>
-  <Route path="/cocktail/id" element={<DrinkCard/>}> </Route>
+  <Route path="/cocktail/:id" element={<DrinkCard/>}> </Route>
   {/* <Route path ="/roulette" element={<Roulette/>}></Route> */}
   <Route path="/books" element={<Books/>}></Route>
   <Route path="/whiskey" element={ <RecipeContainer/>}></Route>
@@ -39,3 +41,5 @@ export default function App() {
   </BrowserRouter>
   )
 }
+
+export default App;

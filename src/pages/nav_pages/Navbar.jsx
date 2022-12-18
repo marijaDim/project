@@ -2,11 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import Burger from './Burger';
 import { NavLink } from 'react-router-dom';
-import logo from "../img/shaker.png";
+import logo from  "../../img/shaker.png"
 import {AiFillShopping} from "react-icons/ai";
 import { useContext } from 'react';
-import CartContext from '../CartContext';
-
+import CartContext from '../../CartContext';
 
 const Nav = styled.nav`
   width: 100%;

@@ -1,7 +1,8 @@
 import React from 'react';
+import { useContext } from "react";
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-
+import UserContext from '../../UserContext';
 
 const Ul = styled.ul`
   list-style: none;
@@ -37,14 +38,19 @@ const Ul = styled.ul`
 `;
 
 const RightNav = ({ open }) => {
-  
+  const {user, setUser} = useContext(UserContext);
+
+  function logout () {
+    setUser(null);
+  }
   return (
     <Ul open={open}>
       {/* <li><NavLink to="/">Home</NavLink></li> */}
       <li><NavLink to="/search">Explore drinks</NavLink></li>
       <li><NavLink to="/books">Our books</NavLink></li>
       <li><NavLink to="/roulette">Roulette</NavLink></li>
-      <li> <NavLink to="/login">Log in</NavLink></li>
+      <li> {!user && <NavLink to="/login">Log In</NavLink>}
+            {user && <NavLink href="#" onClick={logout}>Log Out</NavLink>}</li>
     </Ul>
   )
 }

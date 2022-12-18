@@ -1,64 +1,36 @@
-import React, { Component } from "react";
+import axios from 'axios';
+import React, { useState} from 'react';
+import {  useNavigate } from 'react-router-dom';
+import { API_URL } from '../api';
 
-export default class Signup extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      fname: "",
-      lname: "",
-      email: "",
-      password: "",
-    };
-    this.handleSubmit = this.handleSubmit.bind(this);
+
+
+export default function Signup() {
+ 
+  const [user, setUser] = useState({ password: "", email: "" });
+  const history = useNavigate();
+
+    const createUsers = async (data) => {
+        try {
+             await axios.post(`${API_URL}/users/`,data);
+            }
+        catch (error) {
+            console.log(error.message);
+        }
+    }
+
+const handleChange=(e)=>{
+e.preventDefault();
+
+if( user.password !=="" && user.email !==""){
+
+   createUsers(user);
+   history("/");
+}
   }
-  handleSubmit(e) {
-    e.preventDefault();
-    const { fname, lname, email, password } = this.state;
-    console.log(fname, lname, email, password);
-    fetch("http://localhost:5000/signup", {
-      method: "POST",
-      crossDomain: true,
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify({
-        fname,
-        email,
-        lname,
-        password,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data, "userRegister");
-      });
-  }
-  render() {
     return (
-      <form className="signup_wrap" onSubmit={this.handleSubmit}>
+      <form className="signup_wrap" onSubmit={handleChange}>
         <h3>Sign Up</h3>
-
-        <div className="mb-3">
-          <label>First name</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="First name"
-            onChange={(e) => this.setState({ fname: e.target.value })}
-          />
-        </div>
-
-        <div className="mb-3">
-          <label>Last name</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Last name"
-            onChange={(e) => this.setState({ lname: e.target.value })}
-          />
-        </div>
 
         <div className="mb-3">
           <label>Email address</label>
@@ -66,8 +38,9 @@ export default class Signup extends Component {
             type="email"
             className="form-control"
             placeholder="Enter email"
-            onChange={(e) => this.setState({ email: e.target.value })}
-          />
+            onChange={(e)=>setUser({...user,email:e.target.value})}
+            value={user.email}         
+            />
         </div>
 
         <div className="mb-3">
@@ -76,7 +49,8 @@ export default class Signup extends Component {
             type="password"
             className="form-control"
             placeholder="Enter password"
-            onChange={(e) => this.setState({ password: e.target.value })}
+            onChange={(e)=>setUser({...user,password:e.target.value})}
+            value={user.password}
           />
         </div>
 
@@ -88,4 +62,5 @@ export default class Signup extends Component {
       </form>
     );
   }
-}
+
+
