@@ -6,11 +6,11 @@ import CartContext from '../CartContext';
 function BookCard({name, img, price, description}){
 
 
-    const {addToCart} =useContext(CartContext)
+    const {addToCart} =useContext(CartContext);
     return(
         <div className='book_card'>
             <div className='book_box'>
-            <img src={img} alt="book" width="100" height="150" />
+            <img src={img} alt={name} width="100" height="150" />
             </div>
             <div className='purchase'>
                 <h3>{name}</h3>

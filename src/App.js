@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Navbar from './pages/nav_pages/Navbar';
 import Main from './pages/Main';
 import Books from './pages/Books';
 import DrinkCard from './pages/DrinkCard';
 import RecipeContainer from './pages/RecipeContainer';
 //import Roulette from './pages/Roulette';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
+import Login from './pages/login_pages/Login';
+import Signup from './pages/login_pages/Signup';
 import Footer from './pages/Footer';
 import Checkout from './pages/Checkout';
 import SearchContainer from './pages/SearchContainer';

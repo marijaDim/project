@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {CartProvider} from './CartContext';
-import { AppProvider } from './context';
+import { AppProvider } from './appContext';
 import {UserProvider} from './UserContext';
 
 

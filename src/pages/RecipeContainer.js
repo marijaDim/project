@@ -29,7 +29,7 @@ useEffect(() => {
         let actualData = await response.json();
         setCocktails(actualData);
       } catch(error) {
-        console.log("There is a problem fetching the post data -" + error)
+        console.log("There is a problem fetching data -" + error)
         setCocktails(null);
       } finally {
         setLoading(false);

@@ -1,10 +1,8 @@
 import React from 'react';
-import { HiSearch} from "react-icons/hi";
-import CocktailCard from './CocktailsList'
-import AppContext from "../context";
+import {HiSearch} from "react-icons/hi";
+import CocktailsList from './CocktailsList'
+import AppContext from "../appContext";
 import { useRef,useEffect ,useContext} from 'react';
-
-
 
 
 export default function SearchContainer(){
@@ -13,7 +11,6 @@ export default function SearchContainer(){
         const { setSearchTerm, cocktails, found } = useContext(AppContext);
         
         const searchCocktail = (e) => {
-
             setSearchTerm(searchValue.current.value);
         }
     
@@ -24,6 +21,10 @@ export default function SearchContainer(){
         useEffect(() => {
             searchValue.current.focus();
         }, []);
+
+        console.log(cocktails);
+
+//const randomDrink
 
     return ( 
         <div className='search_wrap'>
@@ -37,13 +38,12 @@ export default function SearchContainer(){
           ref={searchValue} onChange={searchCocktail}
         />
         <button id="btnSearch"><HiSearch/></button>
-        {/* <button id="random"><i class="fa fa-random"></i></button> */}
       </form>
       </div>
       <div className="grid place-items-center grid-cols-1 gap-5 lg:grid-cols-2 p-10 w-full max-w-7xl mx-auto">
                     {found=== false? <p className="col-span-2">No cocktails found that match that criteria</p> : cocktails.map((cocktail)=>{
                         return(
-                            <CocktailCard key={cocktail.id} name={cocktail.name} img={cocktail.img}/>
+                            <CocktailsList key={cocktail.id} name={cocktail.name} img={cocktail.img} id={cocktail.id}/>
                         );
                         
                     })}

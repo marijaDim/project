@@ -3,8 +3,8 @@ import {Link} from "react-router-dom"
 import { useNavigate } from "react-router";
 import axios from "axios";
 import { useContext, useEffect, useRef, useState } from "react";
-import UserContext from "../UserContext";
-import { API_URL } from "../api";
+import UserContext from "../../UserContext";
+import { API_URL } from "../../api";
 
 
 export default function Login() {
@@ -37,14 +37,16 @@ export default function Login() {
 
       if(data.password === password){
         //LOGIN OK
-        alert("you are logged in");
+        alert("Login successful");
+         //once we are log in we want to storage that token
+         window.localStorage.setItem("token", data.data);
         //console.log(email)
         setUser(email);
       }
-
-      else{
-        alert("Login not ok")
+      else{ 
         //LOGIN NOT OK
+        alert("Something went wrong. Login not ok")
+       
       }
     })
     .catch((err) => {
