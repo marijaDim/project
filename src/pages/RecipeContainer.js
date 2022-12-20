@@ -38,12 +38,8 @@ useEffect(() => {
     getData()
   }, [base]);
 
-
-
-
   return(
-    <div className="recipe_container">
-      <div id="cocktails_list" className="row justify-content-center">
+    <div className="d-flex flex-row flex-wrap align-items-center justify-content-center">
         {cocktails ?
           cocktails.drinks.map((cocktail) => {
             return (
@@ -57,6 +53,5 @@ useEffect(() => {
           }) :loading && <p>Loading cocktails...</p> }
     
       </div>
-    </div>
   )
 }

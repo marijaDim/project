@@ -22,9 +22,7 @@ export default function SearchContainer(){
             searchValue.current.focus();
         }, []);
 
-        console.log(cocktails);
 
-//const randomDrink
 
     return ( 
         <div className='search_wrap'>
