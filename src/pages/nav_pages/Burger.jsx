@@ -39,6 +39,7 @@ const StyledBurger = styled.div`
 const Burger = () => {
   const [open, setOpen] = useState(false);
   
+
   return (
     <>
       <StyledBurger open={open} onClick={() => setOpen(!open)}>
@@ -51,7 +52,7 @@ const Burger = () => {
   )
 }
 
-export default Burger
+export default Burger;
 
 
 

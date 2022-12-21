@@ -42,6 +42,7 @@ const Ul = styled.ul`
 const RightNav = ({open}) => {
   const {user, setUser} = useContext(UserContext);
   const {items}=useContext(CartContext);
+  
 
   function logout () {
     setUser(null);
