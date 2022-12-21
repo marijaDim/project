@@ -10,25 +10,23 @@ function Checkout(){
 
     return(
         <div className='bag_wrap'>
-            <h2>Checkout</h2>
             <div className='Shopping-bag'>
                 {items.map((item, index)=>(
                     <div key={`${item}-${index}`}
-                    className="d-flex justify-content-between mb-3">
+                    className="d-flex justify-content-around mb-3">
                         <h2>{item.name}</h2>
                         <h3>{item.price}</h3>
-                        <button onClick={()=> removeFromCart(index)}>Remove item</button>
+                        <button  className='bagBtn' id='spinBtn'onClick={()=> removeFromCart(index, item.price)}>Remove item</button>
                         </div>
                 ))}
                 {items.length>=1? 
                 <div>
-              <div className="d-flex my-3">
-                <button
-                  className="btn btn-secondary clearCart"
-                  onClick={()=> clearCart()}>Clear Cart
-                  </button>
-                </div></div>: <p> You have no items in your shopping cart, start adding some!</p>}
-                 
+                    <div id='total'key={totPrice}>Total: $ {Math.round (totPrice *100)/100}</div>
+            <div className="d-flex">
+                <button id='spinBtn'
+                onClick={()=> clearCart()}>Clear Cart
+                </button>
+                </div></div>: <p id='pp'className='text-center'> You have no items in your shopping cart, start adding some!</p>}
             </div>
         </div>
     )

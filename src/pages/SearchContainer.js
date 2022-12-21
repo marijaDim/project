@@ -8,7 +8,8 @@ export default function SearchContainer(){
 
         const searchValue = useRef('');
         const { setSearchTerm, cocktails, found } = useContext(AppContext);
-        
+
+
         const searchCocktail = (e) => {
             setSearchTerm(searchValue.current.value);
         }
@@ -22,29 +23,27 @@ export default function SearchContainer(){
         }, []);
 
 
-
     return ( 
         <div className='search_wrap'>
         <div id='search_form'>
         <form id="forma" name="forma" onSubmit={handleSubmit}>
         <input
-          type="text"
-          name="search"
-          id="search"
-          placeholder="Search for drinks or keywords"
-          ref={searchValue} onChange={searchCocktail}
+        type="text"
+        name="search"
+        id="search"
+        placeholder="Search for drinks or keywords"
+        ref={searchValue} onChange={searchCocktail}
         />
-      </form>
-      </div>
-      <div id='recipe_container'className="d-flex flex-row flex-wrap align-items-center justify-content-center">
+    </form>
+    </div>
+    <div id='recipe_container'className="d-flex flex-row flex-wrap align-items-center justify-content-center">
                     {found=== false? <p className="col-span-2">No cocktails found that match that criteria</p> : cocktails.map((cocktail)=>{
                         return(
-                            <div id='hei'>
                             <CocktailsList key={cocktail.id} name={cocktail.name} img={cocktail.img} id={cocktail.id}/>
-                        </div>);
+                        );
                         
                     })}
                 </div>
-      </div>
+    </div>
     )
 }

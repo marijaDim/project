@@ -29,6 +29,7 @@ if( user.password !=="" && user.email !==""){
 }
   }
     return (
+      <div id='wraper'>
       <form className="signup_wrap" onSubmit={handleChange}>
         <h3 className='text-center'>Sign Up</h3>
 
@@ -60,6 +61,7 @@ if( user.password !=="" && user.email !==""){
           </button>
         </div>
       </form>
+      </div>
     );
   }
 

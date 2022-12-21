@@ -40,7 +40,6 @@ export default function Login() {
         alert("Login successful");
          //once we are log in we want to storage that token
          window.localStorage.setItem("token", data.data);
-        //console.log(email)
         setUser(email);
       }
       else{ 
@@ -58,7 +57,7 @@ export default function Login() {
 
   
     return (
-    <div id="login_wrap" className="d-flex flex-row justify-content-center align-items-center" >
+    <div id="login_wrap">
       <div id="login" className="p-2 border border-dark">
       <form onSubmit={handleSubmit}>
         

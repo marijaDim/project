@@ -35,7 +35,7 @@ useEffect(()=>{
       getData()
 },[id]);
 
- const getIngredients= (cocktail)=>{
+const getIngredients= (cocktail)=>{
     let allingredient=[];
     let ingredients;
     let measure;
@@ -53,7 +53,7 @@ useEffect(()=>{
   }
     return(
         <div id='drink_card'>
-          {cocktail?cocktail.drinks.map((info, index)=>{
+          {cocktail?cocktail.drinks.map((info)=>{
 
             	// Im calling Drink's glass and assign them to my
 							// special glass img
@@ -68,7 +68,7 @@ useEffect(()=>{
 								glass = strGlass.toLowerCase().replace(/\s+/g, '');
 							}
             return(
-            <div id='drink_wrap' key={index}>
+            <div id='drink_wrap' key={info.idDrink}>
               <h2 className='text-center'>{info.strDrink}</h2>
               <div id='first'>
                 <div id='drink_img'>
@@ -92,7 +92,7 @@ useEffect(()=>{
 
           {ingredients? ingredients.map((data, index)=>{
             return(
-              <div id='ing'>
+              <div id='ing' key={index}>
                   <div className='col-sm-6'>
                     <ul>
                       <li key={index}>{data.ingredient}: {data.measurement}</li>

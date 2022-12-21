@@ -6,19 +6,19 @@ export function CartProvider({children}){
 
     const[items,setItems]=useState([]);
     const [totPrice, setTotal] = useState(0);
+
     
     const addToCart=(name,price, index)=>{
-        //totPrice += price;
+        let newTotal=totPrice+parseFloat(price);
+        setTotal(newTotal);
 
-       // const test=totPrice += price;
-        //setTotal(test);
         setItems((prevState)=>[...prevState,{name,price, index}]);
     }
 
-    const removeFromCart=(index)=> {
-            
-            //need price of removed iten
-            //then -= price as in addtocart
+    const removeFromCart=(index, price)=> {
+        let newTotal=totPrice-parseFloat(price);
+        setTotal(newTotal);
+       
             setItems(items=>items.filter((_, i) => i !== index));
         }
 
