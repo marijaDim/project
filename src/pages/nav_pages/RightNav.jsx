@@ -3,6 +3,8 @@ import { useContext } from "react";
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import UserContext from '../../UserContext';
+import CartContext from '../../CartContext';
+import {AiFillShopping} from "react-icons/ai";
 
 const Ul = styled.ul`
   list-style: none;
@@ -39,7 +41,7 @@ const Ul = styled.ul`
 
 const RightNav = ({ open }) => {
   const {user, setUser} = useContext(UserContext);
-
+  const {items}=useContext(CartContext);
   function logout () {
     setUser(null);
   }
@@ -48,11 +50,16 @@ const RightNav = ({ open }) => {
       {/* <li><NavLink to="/">Home</NavLink></li> */}
       <li><NavLink to="/search">Explore drinks</NavLink></li>
       <li><NavLink to="/books">Our books</NavLink></li>
-      <li><NavLink to="/roulette">Roulette</NavLink></li>
+      <li id='cart'><NavLink to ={"/checkout"}>
+          <div>
+            <AiFillShopping />
+            <span>{items.length=== 0? <span></span>:<span>{items.length} </span> } </span>
+          </div>
+        </NavLink></li>
       <li> {!user && <NavLink to="/login">Log In</NavLink>}
             {user && <NavLink href="#" onClick={logout}>Log Out</NavLink>}</li>
     </Ul>
   )
 }
 
-export default RightNav
+export default RightNav;

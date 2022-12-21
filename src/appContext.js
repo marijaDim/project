@@ -12,8 +12,8 @@ export function AppProvider ({ children }) {
     const [found, setFound] = useState(true);
 
 
-
-    const fetchDrinks = useCallback(async () => {
+useEffect(() => {
+    const fetchDrinks = async () => {
         setLoading(true);
         if(searchTerm){
         try {
@@ -30,9 +30,7 @@ export function AppProvider ({ children }) {
                         info: strAlcoholic,
                         glass: strGlass
                     }
-              
                 });
-
                 setCocktails(newCocktails);
                 setFound(true);
             } else {
@@ -50,11 +48,9 @@ export function AppProvider ({ children }) {
     else{
         setCocktails([]);
     }
-    }, [searchTerm]);
-
-    useEffect(() => {
-        fetchDrinks();
-    }, [searchTerm, fetchDrinks])
+    };
+ fetchDrinks();
+},[searchTerm])
 
 
 

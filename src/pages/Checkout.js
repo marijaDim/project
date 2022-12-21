@@ -6,7 +6,7 @@ import CartContext from '../CartContext';
 
 function Checkout(){
 
-    const {items, price, removeFromCart, clearCart}=useContext(CartContext);
+    const {items, totPrice, removeFromCart, clearCart}=useContext(CartContext);
 
     return(
         <div className='bag_wrap'>
@@ -22,13 +22,12 @@ function Checkout(){
                 ))}
                 {items.length>=1? 
                 <div>
-                    <h3>Total $<span className="totalprice2">{price}</span></h3>
               <div className="d-flex my-3">
                 <button
                   className="btn btn-secondary clearCart"
                   onClick={()=> clearCart()}>Clear Cart
                   </button>
-                </div></div>: <p></p>}
+                </div></div>: <p> You have no items in your shopping cart, start adding some!</p>}
                  
             </div>
         </div>

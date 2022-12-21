@@ -51,7 +51,7 @@ export default function Login() {
     })
     .catch((err) => {
       console.error(err);
-      alert('An error occurred, please try again later.');
+      alert('Account does not exist. Sign up first ');
       buttonRef.current.disabled = false;
     })
   }

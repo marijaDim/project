@@ -1,5 +1,4 @@
 import React from 'react';
-import { AiFillShopping } from 'react-icons/ai';
 import { useContext } from 'react';
 import CartContext from '../CartContext';
 
@@ -9,15 +8,13 @@ function BookCard({name, img, price, description}){
     const {addToCart} =useContext(CartContext);
     return(
         <div className='book_card'>
+            <img src={img} alt={name} width="200" height="260" />
             <div className='book_box'>
-            <img src={img} alt={name} width="100" height="150" />
-            </div>
-            <div className='purchase'>
                 <h3>{name}</h3>
                 <p>{description}</p>
-                <AiFillShopping onClick={()=> addToCart (name,price)} />
             </div>
             <h4>{price}</h4>
+            <button className="button is-danger is-light"id="spinBtn"onClick={()=> addToCart (name,price)}>Add to bag</button>
         </div>
     )
 }

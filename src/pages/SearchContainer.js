@@ -1,5 +1,4 @@
 import React from 'react';
-import {HiSearch} from "react-icons/hi";
 import CocktailsList from './CocktailsList'
 import AppContext from "../appContext";
 import { useRef,useEffect ,useContext} from 'react';
@@ -26,7 +25,7 @@ export default function SearchContainer(){
 
     return ( 
         <div className='search_wrap'>
-            <div id='search_pic'>
+        <div id='search_form'>
         <form id="forma" name="forma" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -35,14 +34,14 @@ export default function SearchContainer(){
           placeholder="Search for drinks or keywords"
           ref={searchValue} onChange={searchCocktail}
         />
-        <button id="btnSearch"><HiSearch/></button>
       </form>
       </div>
-      <div className="grid place-items-center grid-cols-1 gap-5 lg:grid-cols-2 p-10 w-full max-w-7xl mx-auto">
+      <div id='recipe_container'className="d-flex flex-row flex-wrap align-items-center justify-content-center">
                     {found=== false? <p className="col-span-2">No cocktails found that match that criteria</p> : cocktails.map((cocktail)=>{
                         return(
+                            <div id='hei'>
                             <CocktailsList key={cocktail.id} name={cocktail.name} img={cocktail.img} id={cocktail.id}/>
-                        );
+                        </div>);
                         
                     })}
                 </div>

@@ -39,16 +39,18 @@ useEffect(() => {
   }, [base]);
 
   return(
-    <div className="d-flex flex-row flex-wrap align-items-center justify-content-center">
+    <div id='lista'className="d-flex flex-row flex-wrap align-items-center justify-content-center">
         {cocktails ?
           cocktails.drinks.map((cocktail) => {
             return (
+              <div>
             <CocktailsList
               key={cocktail.idDrink}
               id={cocktail.idDrink}
               name={cocktail.strDrink}
               img={cocktail.strDrinkThumb} 
             />
+            </div>
             )
           }) :loading && <p>Loading cocktails...</p> }
     

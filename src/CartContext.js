@@ -1,21 +1,24 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 
 const CartContext=createContext();
 
 export function CartProvider({children}){
 
     const[items,setItems]=useState([]);
-    const [price, setPrice] = useState(0);
+    const [totPrice, setTotal] = useState(0);
     
-    useEffect(() => {
-        setPrice(items.reduce((total, { price }) => total + price,0));
-      }, [items]);
+    const addToCart=(name,price, index)=>{
+        //totPrice += price;
 
-    const addToCart=(name,price)=>{
-        setItems((prevState)=>[...prevState,{name,price}]);
+       // const test=totPrice += price;
+        //setTotal(test);
+        setItems((prevState)=>[...prevState,{name,price, index}]);
     }
 
     const removeFromCart=(index)=> {
+            
+            //need price of removed iten
+            //then -= price as in addtocart
             setItems(items=>items.filter((_, i) => i !== index));
         }
 
@@ -25,7 +28,7 @@ export function CartProvider({children}){
 
     
     return(
-        <CartContext.Provider value={{items,addToCart, price, removeFromCart, clearCart}}>
+        <CartContext.Provider value={{items,addToCart,totPrice, removeFromCart, clearCart}}>
             {children}
         </CartContext.Provider>
     )

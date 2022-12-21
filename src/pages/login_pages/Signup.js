@@ -30,7 +30,7 @@ if( user.password !=="" && user.email !==""){
   }
     return (
       <form className="signup_wrap" onSubmit={handleChange}>
-        <h3>Sign Up</h3>
+        <h3 className='text-center'>Sign Up</h3>
 
         <div className="mb-3">
           <label>Email address</label>

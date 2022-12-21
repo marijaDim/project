@@ -6,8 +6,9 @@
   background-color:  #191817; 
  color: #ffe4c4;
  font-size: 1rem;
- /* width: 100%;
- height: 100%; */
+  /* width: 100%; */
+ height: 100%;  
+ width: 100vw;
  display: flex;
     flex-direction: column;
 }
@@ -20,23 +21,40 @@
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
+  font-size: 25px;
 }
 
+.nav_wrap h3{
+  font-size: 35px;
+}
+
+#cart a{
+  text-decoration: none;
+  color: #daa520;
+  font-size: 25px;
+}
 
 /* ***MAIN*** */
 #main_container{
-  height: calc(100vh - 180px);
-  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
 }
-
+@media (max-width: 600px) {
+  #main_container{
+    flex-direction: column;
+  }
+  } 
 #main_container .col-sm{
   background-position: center center;
-   background-size: cover;
+  background-size: cover;
     min-height: 500px; 
     opacity: 0.8;
-   text-align: center;
-   padding-top: 350px;
-  /* width: 100%; */
+  text-align: center;
+  padding-top: 300px;
+  height: 100%;
+  width: 100%;
 }
 #main_container .col-sm:hover{
   opacity: 1;
@@ -48,7 +66,8 @@
   font-size: 2rem;
   text-decoration: none; 
   color: #f8a100;
-
+height: 100vh;
+width: 100vw;
   }
 
  .naslov:hover{
@@ -128,21 +147,39 @@
 
 
 
+
 /* ***SIGN UP*** */
 
 .signup_wrap{
   color: goldenrod;
   box-shadow: inset 0 0 20px #f8a100;
-  width: 500px;
+  width: 800px;
   height: 500px;
-  margin: auto;
-padding: 20px;
+  margin-left: 20px;
+  margin-top: 30px;
+padding: 40px;
 }
 
-.search_wrap{
-  height: 100vh;
-} 
+.signup_wrap button{
+  margin-top: 30px;
+  display: block;
+}
 
+
+
+
+/* ***SEARCH*** */
+
+.search_wrap{
+  height: 100%;
+}
+
+#searc_form{
+  height: 100%;
+}
+#hei{
+  height: 100%;
+}
 #search{
   width: 80%;
         padding: 12px 24px;
@@ -154,12 +191,11 @@ margin-left: 30px;
     color: #daa520;
     margin-top: 50px;
         background-color: transparent;
-         transition: all 250ms ease-in-out;}
+        transition: all 250ms ease-in-out;}
 
 
          
 #search::placeholder{
-  /* color: color(#575756 a(0.8)); */
   color: #daa520;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -167,29 +203,30 @@ margin-left: 30px;
 
 #search:hover, #search:focus{
   padding: 12px 0;
-            outline: 0;
-            border: 1px solid transparent;
-            border-bottom: 1px solid #575756;
-            border-radius: 0;
-            /* background-position: 100% center; */
+  outline: 0;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #daa520;
+  border-radius: 0;
 }
+
+
+
 /* ***FOOTER*** */
 
 .footer{
   /* width: 100%; */
   /* background-color: #191817; */
-  color: beige;
-  min-height:50px;
-  margin-top: auto 0;
+  color: #daa520;
+  min-height:300px;
+  /* margin-top: auto 0; */
 }
 #footer_text p{
-padding-top: 0;
 padding-left: 20px;
-margin-top: 10px;
+margin-top: 30px;
 }
  @media (max-width: 600px) {
 .footer{
-  display: none;
+display: none;
 }
 } 
 
@@ -236,20 +273,25 @@ margin-top: 10px;
     opacity: 0.5;
 }
 
-
+#lista{
+  margin-left: 30px;
+  margin-right: 30px;
+}
 
 /* ***DRINK CARD*** */
 
 #drink_card{
-      padding: 30px;
-   cursor: pointer;
+  padding: 30px;
+  cursor: pointer;
     border: 5px solid  #daa520;
-    margin: 15px 85px; 
+    margin: 25px 85px; 
     width: 80%;
     height: 80%;
 }
 #drink_info{
-  padding-left: 30px;
+margin-left:50px ;
+  display: flex;
+  flex-direction: column;
 }
 #drink_glass h4{
   padding-bottom: 10px;
@@ -260,6 +302,10 @@ padding-top: 30px;
 #method{
   margin-top: 20px;
 }
+#drink_img{
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
 #method h3{
   padding-bottom: 20px;
 }
@@ -267,13 +313,13 @@ padding-top: 30px;
   margin-top: 20px;
 }
 #first{
+  border-bottom: thick double #daa520;
+align-items: center;
+justify-content: center;
   display: flex;
   flex-direction: row;
 }
-#drink_info{
-  display: flex;
-  flex-direction: column;
-}
+
 @media (max-width: 600px) {
   #drink_card{
     margin: 15px 15px; 
@@ -291,8 +337,12 @@ height: 300px;
     flex-direction: column;
   }
   #drink_info{
+    margin-left: 10px;
     display: flex;
     flex-direction: column;
+  }
+  #drink_glass h4{
+    margin-top: 20px;
   }
   } 
   
@@ -303,7 +353,70 @@ height: 300px;
     }
     #drink_info{
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
     }
     } 
   
+
+
+    /* ***RECIPE CONTAINER*** */
+
+    #recipe_container{
+      height: 100%;
+      margin-top: 30px;
+    }
+
+
+
+
+    /* ***BOOKS*** */
+
+
+    .books-list{
+      margin: 20px 30px;
+      display: flex;
+      flex-wrap: wrap;    
+      justify-content: center;  
+    }
+    .book_card{
+      box-shadow: inset 0 0 10px black;
+      width: 600px;
+      padding: 30px;
+      font-size: 15px;
+    }
+
+    .book_box{
+      margin-top: 20px;
+    }
+    #korpa{
+      width: 30px;
+    }
+
+    #spinBtn{
+      box-sizing: border-box;
+    background-color: transparent;
+    border: 2px solid #c4ac6f;
+    border-radius: 0.6em;
+    color: #c4ac6f;
+    cursor: pointer;
+    padding: 1em 2em;
+    font-weight: 700;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  }
+  
+  #spinBtn:hover{
+          box-shadow: 0 0 40px 40px #daa520 inset;
+          color: black;
+      outline: 0;
+        }
+  
+  
+  #hidden{
+    display: none;
+  }
+
+
+
+
+
+  /* ***RESPONSIVE*** */
