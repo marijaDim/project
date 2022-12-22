@@ -7,7 +7,7 @@
 
 ### This project was bootstrapped with Create React App and The Cocktail DB API.
 
-#####DEMO of the App: https://project-ten-eta.vercel.app
+##### DEMO of the App: https://project-ten-eta.vercel.app
 
 ## Technologies used:
 * HTML5
