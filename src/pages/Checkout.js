@@ -16,7 +16,7 @@ function Checkout(){
                     className="d-flex justify-content-around mb-3">
                         <h2>{item.name}</h2>
                         <h3>{item.price}</h3>
-                        <button  className='bagBtn' id='spinBtn'onClick={()=> removeFromCart(index, item.price)}>Remove item</button>
+                        <button  className='bagBtn' id='spinBtn'onClick={()=> removeFromCart(index, item.price)}>Remove</button>
                         </div>
                 ))}
                 {items.length>=1? 

@@ -396,7 +396,7 @@ height: 300px;
     border-radius: 0.6em;
     color: #c4ac6f;
     cursor: pointer;
-    padding: 1em 2em;
+    padding: 0.5em 0.8em;
     font-weight: 700;
     transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
   }
