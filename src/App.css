@@ -11,7 +11,7 @@
  min-height: 100vh;
  width: 100%;
  display: flex;
-    flex-direction: column;
+flex-direction: column;
 }
 
 
@@ -60,6 +60,7 @@
   padding-top: 320px;
   height: 100%;
   width: 100%;
+  z-index: 1;
 }
 #main_container .col-sm:hover{
   opacity: 1;
@@ -90,7 +91,7 @@
 }
 #tequila{
   background-image: url(img/mainpic/Optimized-tequila.jpg);
-}
+} 
 #whiskey{
   background-image: url(img/mainpic/Optimized-whiskey.jpg);
 }

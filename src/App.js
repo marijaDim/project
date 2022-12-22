@@ -4,7 +4,6 @@ import Main from './pages/Main';
 import Books from './pages/Books';
 import DrinkCard from './pages/DrinkCard';
 import RecipeContainer from './pages/RecipeContainer';
-//import Roulette from './pages/Roulette';
 import Login from './pages/login_pages/Login';
 import Signup from './pages/login_pages/Signup';
 import Footer from './pages/Footer';
@@ -26,7 +25,6 @@ function App() {
   <Routes>
   <Route exact path ="/" element={<Main/>}></Route>
   <Route path="/cocktail/:id" element={<DrinkCard/>}> </Route>
-  {/* <Route path ="/roulette" element={<Roulette/>}></Route> */}
   <Route path="/books" element={<Books/>}></Route>
   <Route path="/whiskey" element={ <RecipeContainer/>}></Route>
 	<Route path="/vodka" element={<RecipeContainer/>}></Route>

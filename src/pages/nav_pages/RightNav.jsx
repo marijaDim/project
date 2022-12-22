@@ -12,7 +12,7 @@ const Ul = styled.ul`
   align-items: center;
   justify-content: center;
   flex-flow: row nowrap; 
- 
+ z-index:2;
   li {
     padding: 18px 10px;
   }
@@ -39,25 +39,24 @@ const Ul = styled.ul`
   }
 `;
 
-const RightNav = ({open}) => {
+const RightNav = ({open, close}) => {
   const {user, setUser} = useContext(UserContext);
   const {items}=useContext(CartContext);
   
-
   function logout () {
     setUser(null);
   }
   return (
     <Ul open={open}>
-      <li><NavLink to="/search">Explore drinks</NavLink></li>
-      <li><NavLink to="/books">Our books</NavLink></li>
-      <li id='cart'><NavLink to ={"/checkout"}>
+      <li ><NavLink onClick={() => close()}to="/search">Explore drinks</NavLink></li>
+      <li><NavLink onClick={() => close()}to="/books">Our books</NavLink></li>
+      <li id='cart'><NavLink onClick={() => close()}to ={"/checkout"}>
           <div>
             <AiFillShopping />
             <span>{items.length=== 0? <span></span>:<span>{items.length} </span> } </span>
           </div>
         </NavLink></li>
-      <li> {!user && <NavLink to="/login">Log In</NavLink>}
+      <li> {!user && <NavLink onClick={() => close()}to="/login">Log In</NavLink>}
             {user && <NavLink href="#" onClick={logout}>Log Out</NavLink>}</li>
     </Ul>
   )
