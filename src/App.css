@@ -6,7 +6,6 @@
   background-color: #191817; 
  color: #daa520;
  font-size: 1rem;
-  /* width: 100%; */
  height: 100%;  
  min-height: 100vh;
  width: 100%;
@@ -46,7 +45,13 @@ flex-direction: column;
 @media (max-width: 600px) {
   #main_container{
     flex-direction: column;
+    height: 100%;
   }
+}
+  @media (max-width: 768px) {
+    #main_container{
+      height: 100%;
+    }
   .nav_wrap h3{
     font-size: 25px;
   }
@@ -65,7 +70,7 @@ flex-direction: column;
 #main_container .col-sm:hover{
   opacity: 1;
   text-shadow: 0px 10px 10px black; 
-  z-index: 1000;
+  z-index: 1;
 }
 
 #main_container a{
@@ -77,7 +82,6 @@ flex-direction: column;
  .naslov:hover{
   color: #daa520; 
   font-size: 5rem;
-    z-index: 1000;
   }
   
 #gin{
@@ -178,12 +182,18 @@ padding: 40px;
     width: 600px;
     height: 400px;
   }
+  #footer{
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {
   .signup_wrap{
     width: 400px;
     margin-left: 20px;
+  }
+  #footer{
+    display: none;
   }
   }
 
@@ -228,12 +238,15 @@ margin-left: 30px;
 #footer h1{
   font-size: 20px;
   margin-right: 10px;
+
 }
 #footer_text p{
 padding-left: 20px;
 margin-top: 30px;
 }
-
+#footer{
+  margin-top: auto;
+}
   /* ***COCKTAILS LIST*** */
 
 
@@ -341,6 +354,10 @@ height: 300px;
   #drink_glass h4{
     margin-top: 20px;
   }
+  #drink_img img{
+    width: 250px;
+    height: 250px;
+  }
   } 
   
   @media (max-width: 780px) {
@@ -351,6 +368,10 @@ height: 300px;
     #drink_info{
       display: flex;
       flex-direction: column;
+    }
+    #drink_img img{
+      width: 250px;
+      height: 250px;
     }
     } 
   
