@@ -1,8 +1,24 @@
-# Getting Started with Create React App
+# Make me a cocktail App 🍸
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ Cocktail Search App that let's you search & filter for cocktails built with React.
 
-## Available Scripts
+
+
+
+### This project was bootstrapped with Create React App and The Cocktail DB API.
+
+#####DEMO of the App: https://project-ten-eta.vercel.app
+
+## Technologies used:
+* HTML5
+* JavaScript (ES6)
+* Node.js
+* GitHub
+* React
+* Css
+* Bootstrap
+
+### Available Scripts
 
 In the project directory, you can run:
 
